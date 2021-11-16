@@ -15,32 +15,31 @@
 <?php
 require_once "session_management.php";
 
-if (($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['login']))) {
+if (($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['submit']))) {
     $email = $conn->real_escape_string($_POST['email']);
     $password = $conn->real_escape_string($_POST['password']);
     
-    $sql = "SELECT * FROM users WHERE user_email = '$email' AND user_password = SHA2(CONCAT('$password','$email'),512)";
+    $sql = "SELECT * FROM users WHERE user_email = '$email'";
     $result = $conn->query($sql) or die($conn->error);
     $numrows = $result->num_rows;
-    if($numrows == 1) {
-        $_SESSION['loggedin'] = true;
-        header("Location: index.php");
+    if($numrows == 0) {
+        $_SESSION['loggedin'] = false;
+        $sql = "INSERT INTO users (user_email, user_password) VALUES ('$email', SHA2(CONCAT('$password','$email'),512))";
+        $result = $conn->query($sql) or die($conn->error);
+        echo "Account created";
+        header("Location: login.php");
     }
     else {
         $_SESSION['loggedin'] = false;
-        echo "Invalid email or password";
+        echo "Email already taken";
     }
-}
-
-if (($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['register']))) {
-    header("Location: register.php");
 }
 
 ?>
 
 <div class="container" style="margin-top: 50px;">
     <h4 class="text-center">Super dumb BJC app</h4><br>
-    <h5>Enter email and password to login</h5>
+    <h5>Register by providing your email and password</h5>
 
     <div class="card card-default">
         <div class="card-body">
@@ -53,16 +52,9 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['register']))) {
                     <label for="password" class="sr-only">Email</label>
                     <input id="password" type="password" class="form-control" name="password" placeholder="Password" required autofocus>
                 </div>
-                <input id="submit" name="login" type="submit" value="Login" class="btn btn-primary mb-2">
-            </form>
-        </div>
-    </div>
-
-    <h5>Or click Register to create a new account</h5>
-    <div class="card card-default">
-        <div class="card-body">
-            <form id="register" class="form-inline" method="POST" action="">
-                <input id="submit" name="register" type="submit" value="Register" class="btn btn-primary mb-2">
+                <div class="form-group mx-sm-3 mb-2">
+                    <input id="submit" name="submit" type="submit" value="Submit" class="btn btn-primary mb-2">
+                </div>
             </form>
         </div>
     </div>

@@ -13,10 +13,7 @@
 
 <body>
 <?php
-require __DIR__.'/vendor/autoload.php';
-use Kreait\Firebase\Factory;
-
-session_start();
+require_once "session_management.php";
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     // echo "LOGGED IN";
