@@ -26,12 +26,11 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['submit']))) {
         $_SESSION['loggedin'] = false;
         $sql = "INSERT INTO users (user_email, user_password) VALUES ('$email', SHA2(CONCAT('$password','$email'),512))";
         $result = $conn->query($sql) or die($conn->error);
-        echo "Account created";
-        header("Location: login.php");
+        header("Location: login.php?registerSuccess=1");
     }
     else {
         $_SESSION['loggedin'] = false;
-        echo "Email already taken";
+        echo '<div class="alert alert-danger alert-dismissable" id="flash-msg"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> <h4><i class="icon fa fa-check"></i>Email already taken</h4></div>';
     }
 }
 

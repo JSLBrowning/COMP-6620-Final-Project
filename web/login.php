@@ -15,6 +15,10 @@
 <?php
 require_once "session_management.php";
 
+if (isset($_GET['registerSuccess'])) {
+    echo '<div class="alert alert-success alert-dismissable" id="flash-msg"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> <h4><i class="icon fa fa-check"></i>Registration successful. Please log in.</h4></div>';
+}
+
 if (($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['login']))) {
     $email = $conn->real_escape_string($_POST['email']);
     $password = $conn->real_escape_string($_POST['password']);
@@ -24,11 +28,12 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['login']))) {
     $numrows = $result->num_rows;
     if($numrows == 1) {
         $_SESSION['loggedin'] = true;
+        echo '<div class="alert alert-success alert-dismissable" id="flash-msg"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> <h4><i class="icon fa fa-check"></i>Logged in successfully!</h4></div>';
         header("Location: index.php");
     }
     else {
         $_SESSION['loggedin'] = false;
-        echo "Invalid email or password";
+        echo '<div class="alert alert-danger alert-dismissable" id="flash-msg"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> <h4><i class="icon fa fa-check"></i>Invalid email or password.</h4></div>';
     }
 }
 
