@@ -1,9 +1,7 @@
 <?php
 session_start();
 
-$dbservername = "sh2.hostrocket.com";
-$dbusername = "dgbrown_bjc";
-$dbpassword = "COMP6620isfun";
+require_once "dbcreds.php";
 
 // Create connection
 $conn = new mysqli($dbservername, $dbusername, $dbpassword);
