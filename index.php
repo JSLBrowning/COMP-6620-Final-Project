@@ -13,12 +13,12 @@
 
 <body>
     <?php
-    require_once "session_management.php";
+    require_once "/web/session_management.php";
 
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         // echo "LOGGED IN";
     } else {
-        header("Location: web/login.php");
+        header("Location: /web/login.php");
     }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -26,7 +26,7 @@
         header("Location: index.php");
     }
 
-    require_once "web/header.php";
+    require_once "/web/header.php";
     ?>
 
     <div class="container" style="margin-top: 75px;">
