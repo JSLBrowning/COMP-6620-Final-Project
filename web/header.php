@@ -1,4 +1,3 @@
-
 <?php
 require_once "session_management.php";
 ?>
@@ -20,16 +19,14 @@ require_once "session_management.php";
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     </ul>
-<?php
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    echo "<p class='text-white'>Welcome, " . $_SESSION['user_firstname'] . "</p>";
-}
-?>
-<!---    <form class="form-inline mt-2 mt-md-0">
+    <?php
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+      echo "<p class='text-white'>Welcome, " . $_SESSION['user_firstname'] . "</p>";
+    }
+    ?>
+    <!---    <form class="form-inline mt-2 mt-md-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
       <button class="btn my-2 my-sm-0" type="submit">Search</button>
     </form> --->
   </div>
 </nav>
-
-
