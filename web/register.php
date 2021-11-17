@@ -18,13 +18,14 @@ require_once "session_management.php";
 if (($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['submit']))) {
     $email = $conn->real_escape_string($_POST['email']);
     $password = $conn->real_escape_string($_POST['password']);
-    
+    $firstname = $conn->real_escape_string($_POST['firstname']);
+
     $sql = "SELECT * FROM users WHERE user_email = '$email'";
     $result = $conn->query($sql) or die($conn->error);
     $numrows = $result->num_rows;
     if($numrows == 0) {
         $_SESSION['loggedin'] = false;
-        $sql = "INSERT INTO users (user_email, user_password) VALUES ('$email', SHA2(CONCAT('$password','$email'),512))";
+        $sql = "INSERT INTO users (user_email, user_password, user_firstname) VALUES ('$email', SHA2(CONCAT('$password','$email'),512), '$firstname')";
         $result = $conn->query($sql) or die($conn->error);
         header("Location: login.php?registerSuccess=1");
     }
@@ -34,22 +35,27 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['submit']))) {
     }
 }
 
+require_once "header.php";
 ?>
 
-<div class="container" style="margin-top: 50px;">
-    <h4 class="text-center">Super dumb BJC app</h4><br>
-    <h5>Register by providing your email and password</h5>
+<div class="container" style="margin-top: 75px;">
+    <h4 class="text-center">Registration</h4><br>
+    <h5>Register by providing your email and desired password</h5>
 
     <div class="card card-default">
         <div class="card-body">
             <form id="login" class="form-inline" method="POST" action="">
                 <div class="form-group mb-2">
-                    <label for="email" class="sr-only">Name</label>
+                    <label for="email" class="sr-only">Email</label>
                     <input id="email" type="email" class="form-control" name="email"   placeholder="Email" required autofocus>
                 </div>
                 <div class="form-group mx-sm-3 mb-2">
-                    <label for="password" class="sr-only">Email</label>
+                    <label for="password" class="sr-only">Password</label>
                     <input id="password" type="password" class="form-control" name="password" placeholder="Password" required autofocus>
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="firstname" class="sr-only">First (Given) Name</label>
+                    <input id="firstname" type="text" class="form-control" name="firstname" placeholder="First (Given) Name" required autofocus>
                 </div>
                 <div class="form-group mx-sm-3 mb-2">
                     <input id="submit" name="submit" type="submit" value="Submit" class="btn btn-primary mb-2">

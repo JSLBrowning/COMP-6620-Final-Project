@@ -13,4 +13,5 @@ if ($conn->connect_error) {
 // echo "Connected successfully <br/>";
 
 $conn->select_db("dgbrown_bjc");
+
 ?>

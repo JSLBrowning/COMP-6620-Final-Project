@@ -5,7 +5,7 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Super dumb BJC app</title>
+<title>BJC Login</title>
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -29,6 +29,9 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['login']))) {
     if($numrows == 1) {
         $_SESSION['loggedin'] = true;
         echo '<div class="alert alert-success alert-dismissable" id="flash-msg"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> <h4><i class="icon fa fa-check"></i>Logged in successfully!</h4></div>';
+        $row = $result->fetch_assoc();
+        $_SESSION['user_email'] = $row['user_email'];
+        $_SESSION['user_firstname'] = $row['user_firstname'];
         header("Location: index.php");
     }
     else {
@@ -41,10 +44,21 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['register']))) {
     header("Location: register.php");
 }
 
+require_once "header.php";
 ?>
 
-<div class="container" style="margin-top: 50px;">
-    <h4 class="text-center">Super dumb BJC app</h4><br>
+<div class="container" style="margin-top: 75px;">
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+            <img class="img-fluid" alt="BJC Logo" src="bjc_logo.png" />
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+
+    <br />
     <h5>Enter email and password to login</h5>
 
     <div class="card card-default">
@@ -62,15 +76,9 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['register']))) {
             </form>
         </div>
     </div>
+    <br/>
+    <a href = "register.php">Click here to register a new account</a>
 
-    <h5>Or click Register to create a new account</h5>
-    <div class="card card-default">
-        <div class="card-body">
-            <form id="register" class="form-inline" method="POST" action="">
-                <input id="submit" name="register" type="submit" value="Register" class="btn btn-primary mb-2">
-            </form>
-        </div>
-    </div>
 </div>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
