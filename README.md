@@ -16,3 +16,11 @@ Setting up a development environment should be fairly simple:
 - Make your contributions and push the code back to the repo.
 
 Code will manually be pushed to the [production site](http://bjc.designbeforetime.com/) as needed.
+
+If you need access to the production database:
+- Download phpMyAdmin (I tested v5.1.1) and unzip it somewhere
+- Obtain "config.inc.php" from the development team and place it into the main phpMyAdmin folder.
+  - Alternatively, make your own using the credentials from the "dbcreds.php" file described above.
+- In the main folder, run ```php -S localhost:9876``` (or use some other port number)
+- Navigate to localhost:9876 in your browser. You should how have access to the production database. Don't break it.
+
