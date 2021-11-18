@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body>
@@ -47,39 +48,25 @@
     ?>
 
     <div class="container" style="margin-top: 75px;">
-        <div class="row">
-            <div class="col-md-4">
-            </div>
-            <div class="col-md-4">
-                <img class="img-fluid" alt="BJC Logo" src="bjc_logo.png" />
-            </div>
-            <div class="col-md-4">
-            </div>
-        </div>
-
+        <header>
+            <img width="100px" src="/assets/bjc.png">
+        </header>
         <br />
-        <h5>Enter email and password to login</h5>
+        <h5>Enter your email and password to log in.</h5>
 
-        <div class="card card-default">
-            <div class="card-body">
-                <form id="login" class="form-inline" method="POST" action="">
-                    <div class="form-group mb-2">
-                        <label for="email" class="sr-only">Name</label>
-                        <input id="email" type="email" class="form-control" name="email" placeholder="Email" required autofocus>
-                    </div>
-                    <div class="form-group mx-sm-3 mb-2">
-                        <label for="password" class="sr-only">Email</label>
-                        <input id="password" type="password" class="form-control" name="password" placeholder="Password" required autofocus>
-                    </div>
-                    <input id="submit" name="login" type="submit" value="Login" class="btn btn-primary mb-2">
-                </form>
+        <form id="login" class="form-inline" method="POST" action="">
+            <div class="form-group mb-2">
+                <label for="email" class="sr-only">Name</label>
+                <input width="40%" id="email" type="email" class="form-control" name="email" placeholder="Email" required autofocus>
             </div>
-        </div>
-        <br />
-        <a href="register.php">Click here to register a new account</a>
-
+            <div class="form-group mx-sm-3 mb-2">
+                <label for="password" class="sr-only">Email</label>
+                <input width="40%" id="password" type="password" class="form-control" name="password" placeholder="Password" required autofocus>
+            </div>
+            <input width="20%" id="submit" name="login" type="submit" value="Login" class="btn btn-primary mb-2">
+        </form>
+        <a style='margin:auto; text-align:center;' href="register.php">Click here to register a new account</a>
     </div>
-
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 
