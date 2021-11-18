@@ -31,7 +31,7 @@
             echo '<div class="alert alert-success alert-dismissable" id="flash-msg"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> <h4><i class="icon fa fa-check"></i>Logged in successfully!</h4></div>';
             $row = $result->fetch_assoc();
             $_SESSION['user_email'] = $row['user_email'];
-            $_SESSION['user_firstname'] = $row['user_firstname'];
+            // $_SESSION['user_firstname'] = $row['user_firstname'];
             header("Location: index.php");
         } else {
             $_SESSION['loggedin'] = false;

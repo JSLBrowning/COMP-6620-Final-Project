@@ -1,0 +1,19 @@
+.courselink {
+    margin: 1em;
+    border: 4px solid #291a30;
+    border-radius: 1em;
+    padding: 1em;
+    box-shadow: 5px 5px 10px #201427, -5px -5px 10px #5d3c6b;
+}
+
+.courselink {
+    transition: ease-in-out 0.2s;
+}
+
+.courselink:hover {
+    transform: scale(1.01);
+}
+
+.courselink:active {
+    transform: scale(0.99);
+}
