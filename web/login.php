@@ -66,7 +66,7 @@
             </div>
             <input width="20%" id="submit" name="login" type="submit" value="Login" class="btn btn-primary mb-2">
         </form>
-        <a style='margin:auto; text-align:center;' href="register.php">Click here to register a new account</a>
+        <p><a href="register.php">Click here to register a new account</a></p>
     </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>

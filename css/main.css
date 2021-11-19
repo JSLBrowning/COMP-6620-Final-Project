@@ -98,3 +98,19 @@ main iframe {
     width: 80%;
     height: 400px;
 }
+
+.container p,
+.container a{
+    all: unset;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container a:visited{
+    all: unset;
+    color: red;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
