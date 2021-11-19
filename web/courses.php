@@ -15,7 +15,7 @@
 
 <body>
     <?php
-    require_once "/../web/header.php";
+    require_once "../web/header.php";
     /*
     require_once "/../../web/session_management.php";
 
@@ -40,14 +40,14 @@
 
     <main>
         <h1>Courses</h1>
-        <a href="/web/courses/1.php">
-            <div class="courselink" href="/web/courses/1.php">
+        <a href="courses/1.php">
+            <div class="courselink" href="courses/1.php">
                 <h2>Abstraction</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
         </a>
-        <a href="/web/courses/2.php">
-            <div class="courselink" href="/web/courses/2.php">
+        <a href="courses/2.php">
+            <div class="courselink" href="courses/2.php">
                 <h2>The Next Thing</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>

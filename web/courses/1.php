@@ -14,7 +14,7 @@
 
 <body>
     <?php
-    require_once "/../../web/header.php";
+    require_once "../../web/header.php";
     /*
     require_once "/../../web/session_management.php";
 

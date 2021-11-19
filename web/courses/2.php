@@ -14,7 +14,7 @@
 
 <body>
     <?php
-    require_once "/../../web/header.php";
+    require_once "../../web/header.php";
     /*
     require_once "/../../web/session_management.php";
 
@@ -34,9 +34,9 @@
     ?>
 
     <header>
-        <h2><a href="/web/courses/1.php">←</a></h2>
+        <h2><a href="web/courses/1.php">←</a></h2>
         <img width="100px" src="/assets/bjc.png">
-        <h2><a href="/web/courses/3.php">→</a></h2>
+        <h2><a href="web/courses/3.php">→</a></h2>
     </header>
 
     <main>
