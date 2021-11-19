@@ -50,6 +50,7 @@
             <th>Student Name</th>
             <th>Course 1</th>
             <th>Course 2</th>
+            <th>Course 3</th>
           </tr>
           <?php
             $sql = "SELECT * FROM users WHERE user_role='student'";
@@ -60,6 +61,7 @@
                 echo "<td>" . $row["user_firstname"] . "</td>\n";
                 echo "<td>" . check_completion($row["user_email"], '1', $conn) . "</td>\n";
                 echo "<td>" . check_completion($row["user_email"], '2', $conn) . "</td>\n";
+                echo "<td>" . check_completion($row["user_email"], '3', $conn) . "</td>\n";
                 echo "</tr>\n";
             }
           ?>
