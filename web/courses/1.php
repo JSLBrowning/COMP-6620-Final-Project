@@ -41,8 +41,13 @@
 
     <main>
         <h1>Abstraction</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est numquam rem ipsa distinctio possimus quasi molestiae repellat, et enim, labore, cum quibusdam! Fugiat, facere? Quas fugit mollitia dolor possimus similique.</p>
+        <h2>Lesson One</h2>
+        <p>One of the concepts most fundamental to computational thinking is <strong>abstraction</strong>, the removal of certain physical details of an object to allow easier focus on the details of immediate importance. Abstraction can be thought of as <strong>generalization</strong> for the purposes of creating <strong>models</strong> usable in programming applications.</p>
+        <h3>Video One</h3>
+        <p>Abstraction is summarized well in this video from Codexpanse.</p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/_y-5nZAbgt4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h2>Lab One</h2>
+        <p>A lab on abstraction can be found <a href="https://bjc.edc.org/bjc-r/cur/programming/2-complexity/1-variables-games/1-number-guessing-game.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment">here</a>.</p>
     </main>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
