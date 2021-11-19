@@ -59,7 +59,7 @@
         </header>
         <br />
 
-        <h4 class="text-center">Welcome!</h4><br/>
+        <h4 class="text-center">Welcome to the Beauty and Joy of Computing!</h4><br/>
         <h5>Enter your email and password to log in.</h5>
 
         <form method="POST" id="login" action="">
