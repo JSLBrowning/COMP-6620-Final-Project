@@ -44,7 +44,7 @@
     <main>
         <h1>Training Status</h1>
 
-        <table class="table table-dark">
+        <table class="table table-dark table-striped">
           <tr>
             <th>Student Email</th>
             <th>Student Name</th>
