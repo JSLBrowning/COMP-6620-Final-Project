@@ -24,6 +24,17 @@
         header("Location: login.php");
     }
 
+    function check_completion($course_number, $conn){
+        $email = $_SESSION['user_email'];
+        $sql = "SELECT * FROM course_completions WHERE user_email = '$email' AND course_number = $course_number";
+        $result = $conn->query($sql) or die($conn->error);
+        $numrows = $result->num_rows;
+        if ($numrows > 0) {
+           return '<img src="../../assets/checkmark.png" width="24" height="24">';
+        }
+        return '';
+    }
+
     require_once "header.php";
     ?>
 
@@ -35,13 +46,17 @@
         <h1>Courses</h1>
         <a href="courses/1.php">
             <div class="courselink" href="courses/1.php">
-                <h2>I. Abstraction</h2>
+                <h2>
+                <?php echo (check_completion('1', $conn)); ?>
+                I. Abstraction</h2>
                 <p>Learn about one of the fundamental concepts of computational thinking.</p>
             </div>
         </a>
         <a href="courses/2.php">
             <div class="courselink" href="courses/2.php">
-                <h2>II. Data Structures</h2>
+                <h2>
+                <?php echo (check_completion('2', $conn)); ?>
+                II. Data Structures</h2>
                 <p>Learn about the various ways computers structure data in memory.</p>
             </div>
         </a>
