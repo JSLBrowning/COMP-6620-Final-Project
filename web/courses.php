@@ -60,6 +60,14 @@
                 <p>Learn about the various ways computers structure data in memory.</p>
             </div>
         </a>
+        <a href="courses/3.php">
+            <div class="courselink" href="courses/3.php">
+                <h2>
+                <?php echo (check_completion('3', $conn)); ?>
+                III. How the Internet Works</h2>
+                <p>Learn how the world's many devices are interconnected.</p>
+            </div>
+        </a>
     </main>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
