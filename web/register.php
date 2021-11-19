@@ -39,7 +39,7 @@
     // require_once "header.php";
     ?>
 
-    <div class="container" style="margin-top: 75px;">
+    <div class="container">
         <header>
             <img width="100px" src="/assets/bjc.png">
         </header>
