@@ -16,15 +16,21 @@
     <?php
     require_once "web/session_management.php";
 
+    // No one is intended to stay on this page. Redirect them as appropriate.
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-        // echo "LOGGED IN";
+        if ($_SESSION['user_role'] == 'teacher'){
+            header("Location: web/training_status.php");
+        }
+        else {
+            header("Location: web/courses.php");
+        }
     } else {
         header("Location: web/login.php");
     }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         session_destroy();
-        header("Location: index.php");
+        header("Location: web/index.php");
     }
 
     require_once "web/header.php";
