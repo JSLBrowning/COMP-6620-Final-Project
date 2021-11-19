@@ -34,7 +34,13 @@
             $row = $result->fetch_assoc();
             $_SESSION['user_email'] = $row['user_email'];
             $_SESSION['user_firstname'] = $row['user_firstname'];
-            header("Location: courses.php");
+            $_SESSION['user_role'] = $row['user_role'];
+            if ($_SESSION['user_role'] == 'teacher'){
+                header("Location: training_status.php");
+            }
+            else {
+                header("Location: courses.php");
+            }
         } else {
             $_SESSION['loggedin'] = false;
             echo '<div class="alert alert-danger alert-dismissable" id="flash-msg"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> <h4><i class="icon fa fa-check"></i>Invalid email or password.</h4></div>';
