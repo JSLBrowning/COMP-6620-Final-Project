@@ -24,8 +24,7 @@
         header("Location: login.php");
     }
 
-    function check_completion($course_number, $conn){
-        $email = $_SESSION['user_email'];
+    function check_completion($email, $course_number, $conn){
         $sql = "SELECT * FROM course_completions WHERE user_email = '$email' AND course_number = $course_number";
         $result = $conn->query($sql) or die($conn->error);
         $numrows = $result->num_rows;
@@ -45,24 +44,27 @@
     <main>
         <h1>Training Status</h1>
 
-        <h1>TBD</h1>
+        <table class="table table-dark">
+          <tr>
+            <th>Student Email</th>
+            <th>Student Name</th>
+            <th>Course 1</th>
+            <th>Course 2</th>
+          </tr>
+          <?php
+            $sql = "SELECT * FROM users WHERE user_role='student'";
+            $result = $conn->query($sql) or die($conn->error);
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>\n";
+                echo "<td>" . $row["user_email"] . "</td>\n";
+                echo "<td>" . $row["user_firstname"] . "</td>\n";
+                echo "<td>" . check_completion($row["user_email"], '1', $conn) . "</td>\n";
+                echo "<td>" . check_completion($row["user_email"], '2', $conn) . "</td>\n";
+                echo "</tr>\n";
+            }
+          ?>
+        </table>
 
-        <a href="courses/1.php">
-            <div class="courselink" href="courses/1.php">
-                <h2>
-                <?php echo (check_completion('1', $conn)); ?>
-                I. Abstraction</h2>
-                <p>Learn about one of the fundamental concepts of computational thinking.</p>
-            </div>
-        </a>
-        <a href="courses/2.php">
-            <div class="courselink" href="courses/2.php">
-                <h2>
-                <?php echo (check_completion('2', $conn)); ?>
-                II. Data Structures</h2>
-                <p>Learn about the various ways computers structure data in memory.</p>
-            </div>
-        </a>
     </main>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
