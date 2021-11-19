@@ -12,7 +12,7 @@ require_once "session_management.php";
       <li class="nav-item active">
         <a class="nav-link"
         <?php
-        if ($_SESSION['user_role'] == 'teacher'){
+        if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 'teacher')){
             echo 'href="/web/training_status.php"';
         }
         else {
