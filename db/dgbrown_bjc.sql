@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: sh2.hostrocket.com
--- Generation Time: Nov 19, 2021 at 03:36 AM
+-- Generation Time: Nov 19, 2021 at 04:45 AM
 -- Server version: 10.2.40-MariaDB-cll-lve
 -- PHP Version: 8.0.12
 
@@ -38,6 +38,8 @@ CREATE TABLE `course_completions` (
 --
 
 INSERT INTO `course_completions` (`user_email`, `course_number`, `completed`) VALUES
+('chwhite.devel@gmail.com', 1, 1),
+('chwhite.devel@gmail.com', 2, 1),
 ('student@auburn.edu', 1, 1),
 ('student@auburn.edu', 2, 1);
 
