@@ -10,7 +10,16 @@ require_once "session_management.php";
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/web/courses.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link"
+        <?php
+        if ($_SESSION['user_role'] == 'teacher'){
+            echo 'href="/web/training_status.php"';
+        }
+        else {
+            echo 'href="/web/courses.php"';
+        }
+        ?> >Home <span class="sr-only">(current)</span></a>
+
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
