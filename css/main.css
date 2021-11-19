@@ -4,7 +4,7 @@ body {
 
 header {
     width: 100%;
-    margin: 1em 0em;
+    margin: 75px 0em 1em 0em;
     display: flex;
     flex-direction: row;
     flex-basis: 1;
@@ -45,7 +45,8 @@ header img {
     box-shadow: 5px 5px 10px #201427, -5px -5px 10px #5d3c6b;
 }
 
-main {
+main,
+form {
     margin: 2em auto;
     max-width: 960px;
     background-color: #452c50;
@@ -55,8 +56,16 @@ main {
     box-shadow: 5px 5px 10px #201427, -5px -5px 10px #5d3c6b;
 }
 
-main h1,
-main p {
+form {
+    width: 640px;
+}
+
+#register {
+    width: 960px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
     color: #fff;
 }
 
