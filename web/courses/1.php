@@ -15,24 +15,18 @@
 
 <body>
     <?php
-    require_once "../../web/header.php";
-    /*
-    require_once "/../../web/session_management.php";
+    require_once "../session_management.php";
 
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-        // echo "LOGGED IN";
+        $_SESSION['course_completed'] = '1';
+        require_once "../log_course_completion.php";
     } else {
-        header("Location: /../web/login.php");
+        header("Location: ../login.php");
     }
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        session_destroy();
-        header("Location: /../../web/index.php");
-    }
-
-    require_once "/../../web/header.php";
-    */
+    require_once "../header.php";
     ?>
+
 
     <header>
         <h2><a href="/web/courses.php">←</a></h2>
