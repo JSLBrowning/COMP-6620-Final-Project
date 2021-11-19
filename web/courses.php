@@ -42,14 +42,14 @@
         <h1>Courses</h1>
         <a href="courses/1.php">
             <div class="courselink" href="courses/1.php">
-                <h2>Abstraction</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <h2>I. Abstraction</h2>
+                <p>Learn about one of the fundamental concepts of computational thinking.</p>
             </div>
         </a>
         <a href="courses/2.php">
             <div class="courselink" href="courses/2.php">
-                <h2>The Next Thing</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <h2>II. Data Structures</h2>
+                <p>Learn about the various ways computers structure data in memory.</p>
             </div>
         </a>
     </main>

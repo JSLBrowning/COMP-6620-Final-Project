@@ -40,7 +40,8 @@
     </header>
 
     <main>
-        <h1>The Next Thing</h1>
+        <h1>Data Structures</h1>
+        <h2>Lesson One</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est numquam rem ipsa distinctio possimus quasi molestiae repellat, et enim, labore, cum quibusdam! Fugiat, facere? Quas fugit mollitia dolor possimus similique.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est numquam rem ipsa distinctio possimus quasi molestiae repellat, et enim, labore, cum quibusdam! Fugiat, facere? Quas fugit mollitia dolor possimus similique.</p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/_y-5nZAbgt4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
