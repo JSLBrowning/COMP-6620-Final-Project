@@ -28,9 +28,9 @@
     ?>
 
     <header>
-        <h2><a href="web/courses/1.php">←</a></h2>
+        <h2><a href="1.php">←</a></h2>
         <img width="100px" src="/assets/bjc.png">
-        <h2><a href="web/courses/3.php">→</a></h2>
+        <h2><a href="../courses.php">→</a></h2>
     </header>
 
     <main>
@@ -44,6 +44,7 @@
         <p>Having fun yet? Good! Now lets jump into some basics around how we can use class objects to create structs in Java and Python!</p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/8yjkWGRlUmY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <p>We just threw a ton of information at you. Remember that you can refer back to these videos if you get confused. But lets get some hands on experience now. Please complete these labs in the order they are listed. Have fun!!</p>
+        <h2>Labs</h2>
         <p>Robot in a Maze Lab(Beginner) can be found <a href="https://bjc.edc.org/bjc-r/cur/programming/3-lists/1-abstraction/1-robot-in-a-maze.html?topic=nyc_bjc%2F3-lists.topic&course=bjc4nyc.html&novideo&noassignment">here</a>.</p>
         <p>Nested Triangle Abstraction Lab(Novice) can be found <a href="https://bjc.edc.org/bjc-r/cur/programming/3-lists/1-abstraction/3-fractal-art-recursive.html?topic=nyc_bjc%2F3-lists.topic&course=bjc4nyc.html&novideo&noassignment">here</a>.</p>
         <p>Tic-Tac-Toe Lab(Advanced) can be found <a href="https://bjc.edc.org/bjc-r/cur/programming/3-lists/3-tic-tac-toe/1-find-ties.html?topic=nyc_bjc%2F3-lists.topic&course=bjc4nyc.html&novideo&noassignment">here</a>.</p>

@@ -47,8 +47,10 @@
         <h3>Video One</h3>
         <p>Abstraction is summarized well in this video from Codexpanse.</p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/_y-5nZAbgt4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <h2>Lab One</h2>
-        <p>A lab on abstraction can be found <a href="https://bjc.edc.org/bjc-r/cur/programming/2-complexity/1-variables-games/1-number-guessing-game.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment">here</a>.</p>
+        <h2>Labs</h2>
+        <p>Number Guessiung Game Lab(Beginner) can be found <a href="https://bjc.edc.org/bjc-r/cur/programming/2-complexity/1-variables-games/1-number-guessing-game.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment">here</a>.</p>
+        <p>Shopping List App Lab(Novice) can be found <a href="https://bjc.edc.org/bjc-r/cur/programming/2-complexity/2-data-structures-art/1-shopping-list-app.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment">here</a>.</p>
+        <p>Automated Fortune Teller Lab(Advanced) can be found <a href="https://bjc.edc.org/bjc-r/cur/programming/2-complexity/optional-projects/1-magic8ball.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment">here</a>.</p>
     </main>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
