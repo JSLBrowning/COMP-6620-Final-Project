@@ -8,4 +8,3 @@ if ($numrows == 0) {
     $sql = "INSERT INTO course_completions (user_email, course_number, completed) VALUES ('$email', '$completion', '1')";
     $result = $conn->query($sql) or die($conn->error);
 }
-?>
