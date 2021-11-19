@@ -16,23 +16,15 @@
 
 <body>
     <?php
-    require_once "../web/header.php";
-    /*
-    require_once "/../../web/session_management.php";
+    require_once "session_management.php";
 
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         // echo "LOGGED IN";
     } else {
-        header("Location: /../web/login.php");
+        header("Location: login.php");
     }
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        session_destroy();
-        header("Location: /../../web/index.php");
-    }
-
-    require_once "/../../web/header.php";
-    */
+    require_once "header.php";
     ?>
 
     <header>
