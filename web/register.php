@@ -27,7 +27,7 @@
         $numrows = $result->num_rows;
         if ($numrows == 0) {
             $_SESSION['loggedin'] = false;
-            $sql = "INSERT INTO users (user_email, user_password, user_firstname) VALUES ('$email', SHA2(CONCAT('$password','$email'),512), '$firstname')";
+            $sql = "INSERT INTO users (user_email, user_password, user_firstname, user_role) VALUES ('$email', SHA2(CONCAT('$password','$email'),512), '$firstname', 'student')";
             $result = $conn->query($sql) or die($conn->error);
             header("Location: login.php?registerSuccess=1");
         } else {
