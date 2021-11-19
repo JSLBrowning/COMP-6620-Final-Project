@@ -18,7 +18,7 @@
     require_once "session_management.php";
 
     if (isset($_GET['registerSuccess'])) {
-        echo '<div class="alert alert-success alert-dismissable" id="flash-msg"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> <h4><i class="icon fa fa-check"></i>Registration successful. Please log in.</h4></div>';
+        echo '<h4 style="color: #aaffaa">Registration successful. Please log in.</h4>';
     }
 
     if (($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['login']))) {
@@ -30,7 +30,6 @@
         $numrows = $result->num_rows;
         if ($numrows == 1) {
             $_SESSION['loggedin'] = true;
-            echo '<div class="alert alert-success alert-dismissable" id="flash-msg"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> <h4><i class="icon fa fa-check"></i>Logged in successfully!</h4></div>';
             $row = $result->fetch_assoc();
             $_SESSION['user_email'] = $row['user_email'];
             $_SESSION['user_firstname'] = $row['user_firstname'];
@@ -43,7 +42,7 @@
             }
         } else {
             $_SESSION['loggedin'] = false;
-            echo '<div class="alert alert-danger alert-dismissable" id="flash-msg"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> <h4><i class="icon fa fa-check"></i>Invalid email or password.</h4></div>';
+            echo '<h4 style="color: #ffaaaa">Invalid username or password.</h4>';
         }
     }
 
@@ -51,7 +50,7 @@
         header("Location: register.php");
     }
 
-    require_once "header.php";
+    // require_once "header.php";
     ?>
 
     <div class="container" style="margin-top: 75px;">
@@ -59,20 +58,28 @@
             <img width="100px" src="/assets/bjc.png">
         </header>
         <br />
+
+        <h4 class="text-center">Welcome!</h4><br/>
         <h5>Enter your email and password to log in.</h5>
 
-        <form id="login" class="form-inline" method="POST" action="">
-            <div class="form-group mb-2">
-                <label for="email" class="sr-only">Name</label>
-                <input width="40%" id="email" type="email" class="form-control" name="email" placeholder="Email" required autofocus>
+        <form method="POST" id="login" action="">
+            <div class="form-group">
+              <h5><label for="email">Email address</label></h5>
+              <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" required autofocus>
             </div>
-            <div class="form-group mx-sm-3 mb-2">
-                <label for="password" class="sr-only">Email</label>
-                <input width="40%" id="password" type="password" class="form-control" name="password" placeholder="Password" required autofocus>
+            <div class="form-group">
+              <h5><label for="password">Password</label></h5>
+              <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
             </div>
-            <input width="20%" id="submit" name="login" type="submit" value="Login" class="btn btn-primary mb-2">
+            <button type="submit" id="submit" name="login" type="submit" value="Login" class="btn btn-primary">Submit</button>
         </form>
-        <p><a href="register.php">Click here to register a new account</a></p>
+
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h5><a href="register.php" style="color: #aaaaff">Click here</a> to register a new account</h5>
+            </div>
+        </div>
+
     </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>

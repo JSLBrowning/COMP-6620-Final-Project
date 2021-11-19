@@ -32,35 +32,40 @@
             header("Location: login.php?registerSuccess=1");
         } else {
             $_SESSION['loggedin'] = false;
-            echo '<div class="alert alert-danger alert-dismissable" id="flash-msg"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> <h4><i class="icon fa fa-check"></i>Email already taken</h4></div>';
+            echo '<div style="margin-top: 75px; class="alert alert-danger alert-dismissable" id="flash-msg"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> <h4><i class="icon fa fa-check"></i>Email already taken</h4></div>';
         }
     }
 
-    require_once "header.php";
+    // require_once "header.php";
     ?>
 
     <div class="container" style="margin-top: 75px;">
-        <h4 class="text-center">Registration</h4><br>
-        <h5>Register by providing your email and desired password</h5>
+        <header>
+            <img width="100px" src="/assets/bjc.png">
+        </header>
+        <br />
 
+        <h4 class="text-center">Registration</h4><br/>
+        <h5>Register by providing the required information</h5>
 
-        <form id="login register" class="form-inline" method="POST" action="">
-            <div class="form-group mb-2">
-                <label for="email" class="sr-only">Email</label>
-                <input id="email" type="email" class="form-control" name="email" placeholder="Email" required autofocus>
-            </div>
-            <div class="form-group mx-sm-3 mb-2">
-                <label for="password" class="sr-only">Password</label>
-                <input id="password" type="password" class="form-control" name="password" placeholder="Password" required autofocus>
-            </div>
-            <div class="form-group mx-sm-3 mb-2">
-                <label for="firstname" class="sr-only">First (Given) Name</label>
-                <input id="firstname" type="text" class="form-control" name="firstname" placeholder="First (Given) Name" required autofocus>
-            </div>
-            <div class="form-group mx-sm-3 mb-2">
-                <input id="submit" name="submit" type="submit" value="Submit" class="btn btn-primary mb-2">
-            </div>
+        <form method="POST" id="login register" action="">
+          <div class="form-group">
+            <h5><label for="email">Email address</label></h5>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" required autofocus>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <h5><label for="password">Password</label></h5>
+            <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+          </div>
+          <div class="form-group">
+            <h5><label for="firstname">First (given) name</label></h5>
+            <input type="text" class="form-control" id="firstname" placeholder="First (given) name" name="firstname" required>
+          </div>
+          <button type="submit" id="submit" name="submit" type="submit" value="Submit" class="btn btn-primary">Submit</button>
         </form>
+
+
     </div>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
